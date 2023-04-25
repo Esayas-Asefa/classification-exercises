@@ -88,8 +88,8 @@ def prep_telco():
     return telco_clean
 
 def prep_titanic(titanic):
-    titanic = titanic.drop(columns=['passenger_id', 'embarked', 'class', 'age', 'deck', 'sex', 'embark_town'])
-    #dummy_df = pd.get_dummies(data=titanic[['sex','embark_town']], drop_first=True)
+    titanic = titanic.drop(columns=['passenger_id', 'sibsp', 'sex', 'parch', 'embarked', 'class', 'deck', 'embark_town', 'alone'])
+    dummy_df = pd.get_dummies(data=titanic[['sex','embark_town']], drop_first=True)
     titanic = pd.concat([titanic], axis=1)
     
     return titanic
